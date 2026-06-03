@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux常用命令速查笔记</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .card-title {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            font-weight: bold;
+            width: 35%;
+        }
+
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .code {
+            font-family: "Consolas", "Monaco", monospace;
+            color: #e74c3c;
+            background-color: #fdf2f2;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .note {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .warning {
+            color: #e67e22;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Linux常用命令速查笔记</h1>
+
+        <!-- 基础帮助与系统控制 -->
+        <div class="card">
+            <div class="card-title">一、基础帮助与系统控制</div>
+            <table>
+                <tr>
+                    <th>命令</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td><span class="code">命令 --help</span></td>
+                    <td>查看指定命令的帮助信息</td>
+                </tr>
+                <tr>
+                    <td><span class="code">man 命令</span></td>
+                    <td>查看系统手册的详细帮助信息</td>
+                </tr>
+                <tr>
+                    <td><span class="code">clear</span></td>
+                    <td>清屏操作</td>
+                </tr>
+                <tr>
+                    <td><span class="code">sync</span></td>
+                    <td>将内存中的数据强制写入磁盘（防止数据丢失）</td>
+                </tr>
+                <tr>
+                    <td><span class="code">poweroff</span></td>
+                    <td>立即关机</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 目录导航 -->
+        <div class="card">
+            <div class="card-title">二、目录导航</div>
+            <table>
+                <tr>
+                    <th>命令</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td><span class="code">ls</span></td>
+                    <td>查看当前目录下的文件和文件夹</td>
+                </tr>
+                <tr>
+                    <td><span class="code">ls -a</span></td>
+                    <td>显示所有文件，包括隐藏文件（以.开头的文件）</td>
+                </tr>
+                <tr>
+                    <td><span class="code">ls -l</span></td>
+                    <td>以列表形式显示，包含文件权限、所有者、修改时间等详细信息</td>
+                </tr>
+                <tr>
+                    <td><span class="code">cd /</span></td>
+                    <td>切换到系统根目录</td>
+                </tr>
+                <tr>
+                    <td><span class="code">cd ~</span></td>
+                    <td>切换到当前用户的home目录</td>
+                </tr>
+                <tr>
+                    <td><span class="code">cd ../</span></td>
+                    <td>返回上一级目录</td>
+                </tr>
+                <tr>
+                    <td><span class="code">cd ../../../</span></td>
+                    <td>连续返回三级目录（可根据需要增减../数量）</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 文件与目录操作 -->
+        <div class="card">
+            <div class="card-title">三、文件与目录操作</div>
+            <table>
+                <tr>
+                    <th>命令</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td><span class="code">touch 文件名</span></td>
+                    <td>创建空文件（原笔记torch为笔误）</td>
+                </tr>
+                <tr>
+                    <td><span class="code">mkdir 文件夹名</span></td>
+                    <td>创建新文件夹</td>
+                </tr>
+                <tr>
+                    <td><span class="code">cp 源文件 目标文件</span></td>
+                    <td>复制文件，例：<span class="code">cp a.c b.c</span> 复制a.c为b.c</td>
+                </tr>
+                <tr>
+                    <td><span class="code">mv 源文件 目标路径/</span></td>
+                    <td>移动文件到指定目录，例：<span class="code">mv a.c test/</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">mv 旧文件名 新文件名</span></td>
+                    <td>重命名文件，例：<span class="code">mv a.c b.c</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">rm 文件名</span></td>
+                    <td>删除文件</td>
+                </tr>
+                <tr>
+                    <td><span class="code">rm -r 文件夹名</span></td>
+                    <td>递归删除文件夹及其所有内容</td>
+                </tr>
+                <tr>
+                    <td><span class="code">rm -f 文件名</span></td>
+                    <td>强制删除文件，无需确认</td>
+                </tr>
+                <tr>
+                    <td><span class="code">rm -rf 文件夹名</span></td>
+                    <td><span class="warning">⚠️ 强制递归删除文件夹（危险操作，谨慎使用）</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">gedit 文件名</span></td>
+                    <td>用图形化文本编辑器打开文件（类似Windows记事本）</td>
+                </tr>
+                <tr>
+                    <td><span class="code">file 文件名</span></td>
+                    <td>查看文件的类型信息</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 权限与用户 -->
+        <div class="card">
+            <div class="card-title">四、权限与用户管理</div>
+            <table>
+                <tr>
+                    <th>命令</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td><span class="code">sudo 命令</span></td>
+                    <td>以root管理员权限执行单条命令</td>
+                </tr>
+                <tr>
+                    <td><span class="code">sudo su</span></td>
+                    <td><span class="warning">⚠️ 切换到root用户（全程拥有最高权限，极度谨慎使用）</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">sudo su 用户名</span></td>
+                    <td>从root用户切回指定普通用户，例：<span class="code">sudo su ahshs</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 网络配置 -->
+        <div class="card">
+            <div class="card-title">五、网络配置</div>
+            <table>
+                <tr>
+                    <th>命令</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td><span class="code">ifconfig</span></td>
+                    <td>显示当前系统的网络配置信息（IP、网卡等）</td>
+                </tr>
+                <tr>
+                    <td><span class="code">sudo ifconfig 网卡名 down</span></td>
+                    <td>关闭指定网卡，例：<span class="code">sudo ifconfig eth0 down</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">sudo ifconfig 网卡名 up</span></td>
+                    <td>开启指定网卡，例：<span class="code">sudo ifconfig eth0 up</span></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 进程管理 -->
+        <div class="card">
+            <div class="card-title">六、进程管理</div>
+            <table>
+                <tr>
+                    <th>命令</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td><span class="code">ps</span></td>
+                    <td>查看当前终端的进程（类似Windows任务管理器）</td>
+                </tr>
+                <tr>
+                    <td><span class="code">ps -aux</span></td>
+                    <td>显示系统中所有进程的详细信息</td>
+                </tr>
+                <tr>
+                    <td><span class="code">top</span></td>
+                    <td>实时查看系统进程运行状态、CPU和内存占用</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 查找命令 -->
+        <div class="card">
+            <div class="card-title">七、查找命令</div>
+            <table>
+                <tr>
+                    <th>命令</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td><span class="code">find -name 文件名</span></td>
+                    <td>在当前目录及子目录中查找指定文件，例：<span class="code">find -name a.c</span></td>
+                </tr>
+                <tr>
+                    <td><span class="code">grep -nr "关键词" 路径</span></td>
+                    <td>递归查找指定路径下包含关键词的文件（原笔记gerp为笔误）<br>例：<span class="code">grep -nr "ubuntu" /</span> 在整个系统根目录查找"ubuntu"字符串</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 磁盘与文件大小 -->
+        <div class="card">
+            <div class="card-title">八、磁盘与文件大小</div>
+            <table>
+                <tr>
+                    <th>命令</th>
+                    <th>说明</th>
+                </tr>
+                <tr>
+                    <td><span class="code">du</span></td>
+                    <td>查看文件或目录占用的磁盘空间</td>
+                </tr>
+                <tr>
+                    <td><span class="code">du -h</span></td>
+                    <td>以人类可读的单位（KB/MB/GB）显示大小</td>
+                </tr>
+                <tr>
+                    <td><span class="code">du -a</span></td>
+                    <td>显示目录及其下所有子目录和文件的磁盘占用</td>
+                </tr>
+                <tr>
+                    <td><span class="code">du -s</span></td>
+                    <td>仅显示目录总大小，不显示子目录和文件详情</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
